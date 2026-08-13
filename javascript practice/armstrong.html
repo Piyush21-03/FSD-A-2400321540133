@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armstrong Number Check</title>
+</head>
+<body>
+    <script>
+        let a = 153;
+        let n = a;
+        let r, s = 0;
+
+        while (n > 0) {
+            r = n % 10;              
+            s = s + (r * r * r);     
+            n = Math.floor(n / 10);  
+        }
+
+        if (s === a) {
+            document.write("ARMSTRONG NUMBER");
+        } else {
+            document.write("Not an ARMSTRONG NUMBER");
+        }
+    </script>
+</body>
+</html>
