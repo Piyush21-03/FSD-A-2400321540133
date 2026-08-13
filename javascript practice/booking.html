@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transport Services</title>
+</head>
+<body>
+    <script>
+        let car = {
+            name: "Swift",
+            price: 500,
+            seats: 4
+        };
+        let aeroplane = {
+            name: "Indigo",
+            price: 5000,
+            seats: 120
+        };
+        let helicopter = {
+            name: "Airbus",
+            price: 10000,
+            seats: 6
+        };
+        let choice = prompt(
+            "Choose a service:\nCar\nAeroplane\nHelicopter"
+        );
+        let service;
+        if (choice == "car" || choice == "Car") {
+            service = car;
+            alert("You selected Car");
+        }
+        else if (choice == "Aeroplane" || choice == "aeroplane") {
+            service = aeroplane;
+            alert("You selected Aeroplane");
+        }
+        else if (choice == "helicopter" || choice == "Helicopter") {
+            service = helicopter;
+            alert("You selected Helicopter");
+        }
+        else {
+            alert("Invalid choice");
+        }
+        if (service) {
+            let seatsBooked = Number(prompt("Enter number of seats:"));
+            if (seatsBooked <= 0) {
+                alert("Invalid number of seats");
+            }
+            else if (seatsBooked > service.seats) {
+                alert("Not enough seats available");
+            }
+            else {
+                let totalPrice = seatsBooked * service.price;
+                service.seats = service.seats - seatsBooked;
+                alert("Booking Successful!");
+                document.write("<h2>Booking Successful</h2>");
+                document.write("Service: " + service.name + "<br>");
+                document.write("Price per seat: ₹" + service.price + "<br>");
+                document.write("Seats booked: " + seatsBooked + "<br>");
+                document.write("Total price: ₹" + totalPrice + "<br>");
+                document.write("Seats available: " + service.seats);
+            }
+        }
+
+    </script>
+
+</body>
+</html>
