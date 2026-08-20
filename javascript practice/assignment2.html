@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const courses=["Btech","MCA","Mba"];
+        const details=[{
+            "name":"Piyush",
+            "course":"Btech ",
+            "fee":100000
+        },
+        {
+            "name":"Lakshay",
+            "course":"Btech",
+            "fee":696969
+        },
+        {
+            "name":"Kushal",
+            "course":"Btech",
+            "fee":2449134
+        },
+        {
+            "name":"Naman",
+            "course":"MCA",
+            "fee":6365923
+        },
+        {
+            "name":"krish",
+            "course":"Mba",
+            "fee":243412
+        },
+    ]
+    let course=prompt("enter your course");
+    let student=details.filter((student)=> student.course===course);
+    for( let i=0;i<student.length;i++){
+    document.write("Name:"+student[i].name +"</br>");
+    document.write("Course:",student[i].course+"</br>");
+    document.write("Fee:",student[i].fee+"</br>");
+    }
+
+    </script>
+</body>
+</html>
