@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Booking System</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body style="background-color: rgb(14, 15, 16); color: white;">
+    
+    <div style="background-color: rgb(147, 129, 163); border: 2px solid red; padding: 20px; margin: 20px; border-radius: 10px; width: 50%; margin-left: auto; margin-right: auto;">
+        <center>
+            <h1 style="color: rgb(238, 236, 236);">Bus Booking System</h1>
+            <h3>User Information</h3>
+        </center>
+        <div style="justify-content: center; align-items: center; display: flex; flex-direction: column; gap: 0px;">
+            <p>User Name: <input type="text" placeholder="Enter your name"></p>
+            <p>User Age: <input type="number" placeholder="Enter your age"></p>
+            <p>Adhaar Number: <input type="number" placeholder="Enter your Adhaar number"></p>
+            <p>Select Your City: 
+                <select name="city" id="city">
+                    <option value="delhi">Delhi</option>
+                    <option value="mumbai">Mumbai</option>
+                    <option value="kolkata">Kolkata</option>
+                    <option value="chennai">Chennai</option>
+                </select>
+            </p>
+            <p>Select Date: <input type="date"></p>
+
+            <h3>Bus Information</h3>
+            <p>Select your Bus Type : </p>
+            <p>AC Bus: 2000 <input type="radio" name="busType" value="ac"></p>
+            <p>Non-AC Bus: 1500 <input type="radio" name="busType" value="non-ac"></p>
+            <p>Select your Seat : <select name="seat" id="seat">
+                <option value="seat1">1</option>
+                <option value="seat2">2</option>
+                <option value="seat3">3</option>
+                <option value="seat4">4</option>
+                <option value="seat5">5</option>
+            </select></p>
+        </div>
+    </div>
+</body>
+</html>
