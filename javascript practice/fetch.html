@@ -4,61 +4,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Dukan</title>
+
     <style>
-        table{
-            width:100%;
-            margin:auto;
-            padding:10px;
-            font-size:25px;
-            color:red;
-            border:2px solid red;
+        table {
+            width: 100%;
+            margin: auto;
+            padding: 10px;
+            font-size: 25px;
+            color: red;
+            border: 2px solid red;
+        }
+
+        img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
         }
     </style>
 </head>
+
 <body>
+
     <table>
         <thead>
             <tr>
-                <th>S.No.</th>
-                <th>Title</th>
-                <th>Image</th>
-                <th>Category</th>
-                <th>Price</th>                
+                <td>S.No.</td>
+                <td>Title</td>
+                <td>Images</td>
+                <td>Category</td>
+                <td>Price</td>
             </tr>
         </thead>
-        <tbody id="data">
 
+        <tbody id="data">
         </tbody>
     </table>
+
     <script>
-       const ele=document.getElementById("data");
-       const URL="https://dummyjson.com/products";
-       async function loadData(){
-        try{
-            const res=await fetch(URL);
-            const data=await res.json();
-            console.log("DATA",data.products);
-            let row="";
-            data.products.map((i,index)=>{
-                row+=`
-                <tr>
-                    <td>${index+1}</td>
-                    <td>${i.title}</td>
-                    <td>${i.image}</td>
-                    <td>${i.category}</td>
-                    <td>${i.price}</td>
+        const ele = document.getElementById("data");
 
+        const URL = "https://dummyjson.com/products";
 
-                </tr> 
-                `
-            })
+        async function loadData() {
+            try {
+                const res = await fetch(URL);
+
+                const data = await res.json();
+
+                console.log("DATA", data.products);
+
+                let row = "";
+
+                data.products.map((i, index) => {
+                    row += `
+                        <tr>
+                            <td>${index + 1}</td>
+                            <td>${i.title}</td>
+                            <td>
+                                <img src="${i.images[0]}" />
+                            </td>
+                            <td>${i.category}</td>
+                            <td>${i.price}</td>
+                        </tr>
+                    `;
+                });
+
+                ele.innerHTML = row;
+            }
+            catch (err) {
+                console.log("ERROR", err);
+            }
         }
-        catch(err){
-            console.log("ERROR",err);
-        }
-       }
-       loadData();
+
+        loadData();
     </script>
-    
+
 </body>
 </html>
